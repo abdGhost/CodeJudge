@@ -9,6 +9,9 @@ import Layout from "./components/Layout";
 import Submissions from "./pages/Submission";
 import AdminRoute from "./components/AdminRoute";
 import AdminProblems from "./pages/admin/AdminProblems";
+import CreateProblem from "./pages/admin/CreateProblem";
+import EditProblem from "./pages/admin/EditProblems";
+import Testcases from "./pages/admin/Testcases";
 
 export default function App(){
   return (
@@ -71,6 +74,41 @@ export default function App(){
          </AdminRoute>
         }
       />
+
+        <Route
+          path="/admin/problems/create"
+          element={
+          <AdminRoute>
+            <Layout>
+              <CreateProblem />
+             </Layout>
+          </AdminRoute>
+          }
+        />
+
+        <Route
+         path="/admin/problems/:id/edit"
+          element={
+          <AdminRoute>
+            <Layout>
+              <EditProblem />
+            </Layout>
+          </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin/problems/:id/testcases"
+          element={
+          <AdminRoute>
+            <Layout>
+              <Testcases />
+            </Layout>
+          </AdminRoute>
+          }
+        />
+
+
 
 
       </Routes>
