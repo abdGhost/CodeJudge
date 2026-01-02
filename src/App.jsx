@@ -12,6 +12,8 @@ import AdminProblems from "./pages/admin/AdminProblems";
 import CreateProblem from "./pages/admin/CreateProblem";
 import EditProblem from "./pages/admin/EditProblems";
 import Testcases from "./pages/admin/Testcases";
+import SubmissionDetail from "./pages/SubmissionDetail";
+
 
 export default function App(){
   return (
@@ -108,6 +110,16 @@ export default function App(){
           }
         />
 
+          <Route
+            path="/submissions/:id"
+            element={
+            <ProtectedRoute>
+              <Layout>
+                <SubmissionDetail />
+              </Layout>
+            </ProtectedRoute>
+            }
+          />
 
 
 
